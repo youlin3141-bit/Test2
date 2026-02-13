@@ -21,7 +21,7 @@ int search1(vector <int>d, int num){
             return i;
         }
     }
-    cout<<"NOT FOUND"<<endl;
+    cout<<"NOT FOUND"<<endl;;
     return -1;
 }
 vector<int> sorter(vector <int> unsorted){
@@ -37,9 +37,7 @@ vector<int> sorter(vector <int> unsorted){
     }
     return sorted;
 }
-// int search2(vector<int>d,int num){
-//   pass;
-// }
+
 int main()
 {
     output(n);
