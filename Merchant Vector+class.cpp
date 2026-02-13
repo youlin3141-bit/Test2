@@ -1,43 +1,45 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-class Teacher{
-  private:
-    string Name;
-    string Room;
-    string Subject;
-  public:
-    Teacher(){
-      Name="unknown";
-      Room="unknown";
-      Subject="unknown";
-    }
-    Teacher(string a, string b, string c){
-      Name=a;
-      Room=b;
-      Subject=c;
-    }
-    string getName(){
-      return Name;
-}
-    string getRoom(){
-      return Room;
-    }
-    string getSubject(){
-      return Subject;
-    }
+class Vehicle{
+public:
+  string name;
+  int max_speed;
+};
+class Bus: public Vehicle{
+public:
+  int seats;
+  Bus(string a,int b, int c){
+    name=a;
+    max_speed=b;
+    seats=c;
+  }
 
-
+};
+class Car : public Vehicle{
+public:
+  string Model;
 };
 int main()
 {
-    vector <Teacher> t;
-    Teacher a("Miss Merchant", "IT3", "Computer Science");
-    Teacher dft;
-    t.push_back(a);
-    t.push_back(dft);
-    for(int i=0 ;i<t.size();i++){
-      cout<<t[i].getName()<<" "<<t[i].getRoom()<<" "<<t[i].getSubject()<<endl;
-    }
-    return 0;
+  vector <Bus> bus_vector;
+  string name;
+  int speed,seats;
+  string next="yes";
+  while (next=="yes"){
+    cout<<"Enter Bus Name: " <<endl;
+    cin>>name;
+    cout<<"Enter Bus Max Speed: "<<endl;
+    cin>>speed;
+    cout<<"Enter Seats: "<<endl;
+    cin>>seats;
+    Bus b1(name,speed,seats);
+    bus_vector.push_back(b1);
+    cout<<"Continue??"<<endl;
+    cin>>next;
+  }
+  for(int i=0;i<size(bus_vector);i++){
+    cout<<bus_vector[i].name<<" "<<bus_vector[i].max_speed<<" "<<bus_vector[i].seats<<endl;
+  }
+  return 0;
 }
